@@ -69,21 +69,21 @@ public class GameController : MonoBehaviour
     }
     public void SpawnAsteroid()
     {
-        int asteroidCount = Random.Range(1, 6);  // Random số lượng Asteroid từ 1 đến 6
+        int asteroidCount = Random.Range(1, 6);
 
         for (int i = 0; i < asteroidCount; i++)
         {
-            float randXpos = Random.Range(-9f, 9f);  // Random vị trí trục X
-            Vector2 spawnPos = new Vector2(randXpos, 6); // Vị trí spawn ở trục Y = 6 (trên cùng màn hình)
+            float randXpos = Random.Range(-9f, 9f);
+            Vector2 spawnPos = new Vector2(randXpos, 6); 
 
             if (asteroid)
             {
                 GameObject newAsteroid = Instantiate(asteroid, spawnPos, Quaternion.identity);
-                float randSpeed = Random.Range(2f, 5f);  // Tốc độ rơi từ 2 đến 5
+                float randSpeed = Random.Range(2f, 5f);
                 Asteroid asteroidScript = newAsteroid.GetComponent<Asteroid>();
                 if (asteroidScript != null)
                 {
-                    asteroidScript.moveSpeed = randSpeed;  // Gán tốc độ rơi cho asteroid
+                    asteroidScript.moveSpeed = randSpeed; 
                 }
             }
         }
